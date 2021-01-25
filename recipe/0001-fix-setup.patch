@@ -1,0 +1,24 @@
+index b784a72..6ae257b 100755
+--- a/setup.py
++++ b/setup.py
+@@ -44,9 +44,6 @@ link_args, compile_args = [
+ ]
+
+ osx_has_gss_framework = False
+-if sys.platform == 'darwin':
+-    mac_ver = [int(v) for v in platform.mac_ver()[0].split('.')]
+-    osx_has_gss_framework = (mac_ver >= [10, 7, 0])
+
+ winkrb_path = None
+ if os.name == 'nt':
+@@ -159,6 +156,8 @@ if ENABLE_SUPPORT_DETECTION:
+                     main_lib = '%s.dll' % opt
+                     if winkrb_path:
+                         main_path = os.path.join(winkrb_path, 'bin')
++                elif sys.platform == 'darwin':
++                    main_lib = 'lib%s.dylib' % opt
+                 else:
+                     main_lib = 'lib%s.so' % opt
+         for opt in link_args:
+--
+2.27.0.windows.1
