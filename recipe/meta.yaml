@@ -1,6 +1,6 @@
 {% set name = "gssapi" %}
-{% set version = "1.6.13" %}
-{% set sha256 = "5947b93d8188baab88871c93770a8db394b0e522d4f92d5d4f5c9edb48ac0f9f" %}
+{% set version = "1.7.2" %}
+{% set sha256 = "748efbcf7cfb31183cd75e5314493e79fe3521b3ec00d090a77e23f7c75fa59d" %}
 
 package:
   name: python-gssapi
